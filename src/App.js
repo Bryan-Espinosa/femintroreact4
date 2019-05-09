@@ -1,0 +1,38 @@
+const Pet = props => {
+  return React.createElement("div", {}, [
+    React.createElement("h1", {}, props.name),
+    React.createElement("h2", {}, props.animal),
+    React.createElement("h2", {}, props.breed)
+  ]);
+};
+class App extends React.Component {
+  handleTitleClick() {
+    alert("you clicked the title");
+  }
+  render() {
+    return React.createElement("div", {}, [
+      React.createElement(
+        "h1",
+        { onClick: this.handleTitleClick },
+        "Adopt-a-pet"
+      ),
+      React.createElement(Pet, {
+        name: "luna",
+        animal: "dog",
+        breed: "German Shepard"
+      }),
+      React.createElement(Pet, {
+        name: "luna",
+        animal: "dog",
+        breed: "German Shepard"
+      }),
+      React.createElement(Pet, {
+        name: "luna",
+        animal: "dog",
+        breed: "German Shepard"
+      })
+    ]);
+  }
+}
+
+ReactDOM.render(React.createElement(App), document.getElementById("root"));

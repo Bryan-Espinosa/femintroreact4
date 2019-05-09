@@ -1,0 +1,5 @@
+{
+    "files.autoSave": "onFocusChange",
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "Consolas, 'Courier New', monospace ,'Fira Code'"
+}
