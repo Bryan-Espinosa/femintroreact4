@@ -1,40 +1,18 @@
 import React from "react";
+import { render } from "react-dom";
+import { Pet } from "./Pet";
 
-const Pet = props => {
-  return React.createElement("div", {}, [
-    React.createElement("h1", {}, props.name),
-    React.createElement("h2", {}, props.animal),
-    React.createElement("h2", {}, props.breed)
-  ]);
-};
 class App extends React.Component {
-  handleTitleClick() {
-    alert("you clicked the title");
-  }
   render() {
-    return React.createElement("div", {}, [
-      React.createElement(
-        "h1",
-        { onClick: this.handleTitleClick },
-        "Adopt-a-pet"
-      ),
-      React.createElement(Pet, {
-        name: "luna",
-        animal: "dog",
-        breed: "German Shepard"
-      }),
-      React.createElement(Pet, {
-        name: "luna",
-        animal: "dog",
-        breed: "German Shepard"
-      }),
-      React.createElement(Pet, {
-        name: "luna",
-        animal: "dog",
-        breed: "German Shepard"
-      })
-    ]);
+    return (
+      <div>
+        <h1>Adopt-a-pet</h1>
+        <Pet name="luna" animal="dog" breed="gsd" />
+        <Pet name="loki" animal="cat" breed="shorthair" />
+        <Pet name="pepper" animal="bird" animal="cockatiel" />
+      </div>
+    );
   }
 }
 
-ReactDOM.render(React.createElement(App), document.getElementById("root"));
+render(<App />, document.getElementById("root"));
